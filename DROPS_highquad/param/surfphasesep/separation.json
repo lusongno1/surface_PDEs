@@ -1,0 +1,115 @@
+{
+    "General": {
+        "ProgressBar":  1, 
+        "DynamicLibsPrefix": "../", 
+        "DynamicLibs": [ 
+                        "misc/libmisc-scalarFunctions",
+                        "misc/libmisc-vectorFunctions"
+        ]
+    },
+
+    "Mesh": {
+        "Type":        "BrickBuilder",
+        "Origin":      [-3.38333, -1.61666, -1.61666],
+        "E1":          [ 6.66666,  0,  0],
+        "E2":          [ 0,  3.33333,  0],
+        "E3":          [ 0,  0,  3.33333],
+        "N1":          32,
+        "N2":          16,
+        "N3":          16,
+        "RestartFile": "",
+
+        "AdaptRef": {
+            "Freq":          0,
+            "Width":         10,
+            "CoarsestLevel": 0,
+            "FinestLevel":   0,
+            "SD":            0.1,
+            "CurvDiff":      -1,
+            "Discontinuous": 0
+        }
+    },
+
+    "Time":
+    {
+        "Read" : 0,
+        "Write": "yes",
+        "NumSteps":	512,
+        "FinalTime": 1
+    },
+
+    "SurfSeparation": {
+
+        "Exp": {
+            "RadDrop":  [1, 0, 0],
+            "PosDrop":  [0, 0, 0],
+            "RadTorus": [1, 0.1],
+            "Velocity": [1.5, 0.0, 0.0],
+
+            "StationaryPDE": false,
+            "Wind":     "MergeDropWind",
+            "Levelset": "MergeDropLset",
+            "Normal": "NormalMergeDrop",
+            "Rhs":      "ZeroScalarFun",
+            "ConcentrationSolution": "MergeDropSol",
+            "ChemicalPotentialSolution": "ZeroScalarFun"
+
+        },
+        "Method":     "NarrowBandStabilization",
+        "UseMassDiv": true, 
+        "Theta":      1,
+        "Solver": {
+                "PcAIter":      500,
+                "PcATol":       1e-4,
+                "PcBIter":      500,
+                "PcBTol":       1e-4,
+            "Iter": 1000,
+            "Tol":  1e-9
+        },
+        "XFEMReduced":             -1,
+        "Mobility":                    1,
+        "Epsilon":                   0.1,
+        "FEDegree":                1,
+        "NormalLaplaceCoefficient": 1.0,
+        "SolutionOutput": { 
+            "Freq":   0,
+            "Path":   "../../output/solutions/iface_sol",
+            "Binary": true
+        }
+    },
+
+    "Levelset": {
+        "Solver": {
+            "Tol":           1e-14,
+            "Iter":          500
+        },
+        "SD":            0.1,
+        "CurvDiff":      -1,
+        "VolCorrection": "",
+        "Theta":         1,
+        "Discontinuous": 0
+    },
+
+    "LevelsetMapper": { 
+        "Tol":               1e-7,
+        "Iter":              20,
+        "ArmijoConstant":    1e-2,
+        "Method":            "Newton", 
+        "MaxDampingSteps":   8,
+        "TrustRegion":       1.0,
+        "DeformationMethod": "map_zero_level_sets" 
+    },
+
+    "VTK": {
+        "Freq":           1,
+        "VTKDir":         "../../output/",
+        "VTKName":        "separation",
+        "TimeFileName":   "separation",
+        "Binary":         1,
+        "UseOnlyP1":      false,
+        "ReUseTimeFile":  false,
+        "UseDeformation": "0",
+        "AddP1XPressure": "0",
+        "AddDGOutput":    "0"
+    }
+}

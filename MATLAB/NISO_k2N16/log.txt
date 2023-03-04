@@ -1,0 +1,162 @@
+{操作在以下过程中被用户终止 <a href="matlab:matlab.internal.language.introspective.errorDocCallback('singgep', 'F:\研究生阶段\研究僧\RESEARCH\课题\surfice PDE\特征值问题\codes\singgep.m', 107)" style="font-weight:bold">singgep</a> (<a href="matlab: opentoline('F:\研究生阶段\研究僧\RESEARCH\课题\surfice PDE\特征值问题\codes\singgep.m',107,0)">第 107 行</a>)
+
+
+位置 <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_cal_eigvalues_rcp', 'F:\研究生阶段\研究僧\RESEARCH\课题\surfice PDE\特征值问题\codes\test_cal_eigvalues_rcp.m', 21)" style="font-weight:bold">test_cal_eigvalues_rcp</a> (<a href="matlab: opentoline('F:\研究生阶段\研究僧\RESEARCH\课题\surfice PDE\特征值问题\codes\test_cal_eigvalues_rcp.m',21,0)">第 21 行</a>)
+[lambda,Z,d,X,Y,U,V,DA,DB] = singgep(A,B,1);
+} 
+convergence_rate_plot
+
+pic = 
+
+  <a href="matlab:helpPopup matlab.graphics.chart.primitive.Line" style="font-weight:bold">Line</a> - 属性:
+
+              Color: [0 0.4470 0.7410]
+          LineStyle: '-'
+          LineWidth: 0.5000
+             Marker: 'o'
+         MarkerSize: 6
+    MarkerFaceColor: 'none'
+              XData: [8 16 32 64 128]
+              YData: [2.0516e-14 9.2980e-14 6.8909e-15 3.8698e-15 1.7065e-14]
+              ZData: [1×0 double]
+
+  显示 <a href="matlab:if exist('pic', 'var'), matlab.graphics.internal.getForDisplay('pic', pic, 'matlab.graphics.chart.primitive.Line'), else, matlab.graphics.internal.getForDisplay('pic'), end">所有属性</a>
+
+
+pic = 
+
+  1×2 <a href="matlab:helpPopup matlab.graphics.chart.primitive.Line" style="font-weight:bold">Line</a> 数组:
+
+    Line    Line
+
+
+pic = 
+
+  1×3 <a href="matlab:helpPopup matlab.graphics.chart.primitive.Line" style="font-weight:bold">Line</a> 数组:
+
+    Line    Line    Line
+
+
+pic = 
+
+  1×4 <a href="matlab:helpPopup matlab.graphics.chart.primitive.Line" style="font-weight:bold">Line</a> 数组:
+
+    Line    Line    Line    Line
+
+
+pic = 
+
+  1×5 <a href="matlab:helpPopup matlab.graphics.chart.primitive.Line" style="font-weight:bold">Line</a> 数组:
+
+    Line    Line    Line    Line    Line
+
+
+pic = 
+
+  1×6 <a href="matlab:helpPopup matlab.graphics.chart.primitive.Line" style="font-weight:bold">Line</a> 数组:
+
+    Line    Line    Line    Line    Line    Line
+
+
+pic = 
+
+  1×7 <a href="matlab:helpPopup matlab.graphics.chart.primitive.Line" style="font-weight:bold">Line</a> 数组:
+
+    Line    Line    Line    Line    Line    Line    Line
+
+
+pic = 
+
+  1×8 <a href="matlab:helpPopup matlab.graphics.chart.primitive.Line" style="font-weight:bold">Line</a> 数组:
+
+    Line    Line    Line    Line    Line    Line    Line    Line
+
+
+pic = 
+
+  1×9 <a href="matlab:helpPopup matlab.graphics.chart.primitive.Line" style="font-weight:bold">Line</a> 数组:
+
+    Line    Line    Line    Line    Line    Line    Line    Line    Line
+
+
+pic = 
+
+  1×10 <a href="matlab:helpPopup matlab.graphics.chart.primitive.Line" style="font-weight:bold">Line</a> 数组:
+
+    Line    Line    Line    Line    Line    Line    Line    Line    Line    Line
+
+
+ans =
+
+   -2.1802    3.7542    0.8324   -2.1408
+
+
+ans =
+
+    0.4852    2.4115    2.3634   -2.0270
+
+
+ans =
+
+   -0.5359    5.6459    0.6746   -1.9237
+
+
+ans =
+
+    4.1231    3.8818    4.0391    3.9520
+
+
+ans =
+
+    4.1642    3.8995    4.0317    3.9440
+
+
+ans =
+
+    4.2535    3.9219    4.0280    3.9383
+
+
+ans =
+
+    4.3364    3.9495    4.0260    3.9333
+
+
+ans =
+
+    4.3823    3.9810    4.0256    3.9282
+
+
+ans =
+
+    4.4062    4.0154    4.0273    3.9248
+
+
+ans =
+
+    4.4128    4.0498    4.0312    3.9218
+
+Eig_Clu2eig_cal
+
+eig_cal =
+
+     []
+
+
+eig_cal =
+
+  -1.7065e-14
+
+{错误使用 <a href="matlab:matlab.internal.language.introspective.errorDocCallback('horzcat')" style="font-weight:bold">horzcat</a>
+要串联的数组的维度不一致。
+
+出错 <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Eig_Clu2eig_cal', 'F:\研究生阶段\研究僧\RESEARCH\课题\surfice PDE\特征值问题\codes\Eig_Clu2eig_cal.m', 4)" style="font-weight:bold">Eig_Clu2eig_cal</a> (<a href="matlab: opentoline('F:\研究生阶段\研究僧\RESEARCH\课题\surfice PDE\特征值问题\codes\Eig_Clu2eig_cal.m',4,0)">第 4 行</a>)
+    eig_cal = [eig_cal Eig_Clu{i,2}]
+} 
+collection
+{错误使用 <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mkdir')" style="font-weight:bold">mkdir</a>
+路径无效。路径不能包含空字符。
+
+出错 <a href="matlab:matlab.internal.language.introspective.errorDocCallback('collection', 'F:\研究生阶段\研究僧\RESEARCH\课题\surfice PDE\特征值问题\codes\collection.m', 10)" style="font-weight:bold">collection</a> (<a href="matlab: opentoline('F:\研究生阶段\研究僧\RESEARCH\课题\surfice PDE\特征值问题\codes\collection.m',10,0)">第 10 行</a>)
+mkdir(dir_colections);%建立用于存放文件的文件夹
+} 
+find_eigs

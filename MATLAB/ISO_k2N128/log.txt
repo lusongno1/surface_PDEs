@@ -1,0 +1,168 @@
+diary on;
+A = sparse(A(:,1),A(:,2),A(:,3));
+B = sparse(M(:,1),M(:,2),M(:,3));
+size = size(A,1)
+
+size =
+
+      179280
+
+B_epsilon = sparse(1:size,1:size,1e-15);
+B = B+B_epsilon;
+tmp = eigs(A,B,1000,2)
+{操作在以下过程中被用户终止 <a href="matlab:matlab.internal.language.introspective.errorDocCallback('eigs>@(v)solve(umf,v,false)', 'D:\R2020b\toolbox\matlab\sparfun\eigs.m', 1229)" style="font-weight:bold">eigs>@(v)solve(umf,v,false)</a> (<a href="matlab: opentoline('D:\R2020b\toolbox\matlab\sparfun\eigs.m',1229,0)">第 1229 行</a>)
+
+
+位置 <a href="matlab:matlab.internal.language.introspective.errorDocCallback('eigs>KSherm', 'D:\R2020b\toolbox\matlab\sparfun\eigs.m', 1372)" style="font-weight:bold">eigs>KSherm</a> (<a href="matlab: opentoline('D:\R2020b\toolbox\matlab\sparfun\eigs.m',1372,0)">第 1372 行</a>)
+        r = applyOP(Mv);
+
+位置 <a href="matlab:matlab.internal.language.introspective.errorDocCallback('eigs>KrylovSchur', 'D:\R2020b\toolbox\matlab\sparfun\eigs.m', 1289)" style="font-weight:bold">eigs>KrylovSchur</a> (<a href="matlab: opentoline('D:\R2020b\toolbox\matlab\sparfun\eigs.m',1289,0)">第 1289 行</a>)
+    [V, d, isNotConverged, stopAlgorithm] = KSherm(applyOP, applyM, n, k, ...
+
+位置 <a href="matlab:matlab.internal.language.introspective.errorDocCallback('eigs', 'D:\R2020b\toolbox\matlab\sparfun\eigs.m', 126)" style="font-weight:bold">eigs</a> (<a href="matlab: opentoline('D:\R2020b\toolbox\matlab\sparfun\eigs.m',126,0)">第 126 行</a>)
+[V, d, isNotConverged, spdBout, VV] = KrylovSchur(applyOP, applyM, innerOpts, n, k,...
+} 
+tmp = eigs(A,B,50,2)
+
+tmp =
+
+    2.0000
+    2.0000
+    2.0000
+    0.6765
+    0.6568
+    0.6495
+    0.6363
+    0.6206
+    0.6027
+    0.5972
+    0.5869
+    0.5739
+    0.5728
+    0.5687
+    0.5480
+    0.5120
+    0.5063
+    0.4933
+    0.4911
+    0.4877
+    0.4867
+    0.4818
+    0.4806
+    0.4754
+    0.4735
+    0.4692
+    0.4674
+    0.4635
+    0.4558
+    0.4412
+    0.4346
+    0.4339
+    0.4301
+    0.4290
+    0.4262
+    0.4262
+    0.4247
+    0.4242
+    0.4205
+    0.4195
+    0.4192
+    0.4187
+    0.4167
+    0.4157
+    0.4156
+    0.4153
+    0.4152
+    0.4148
+    0.4137
+    0.4133
+
+reverse(tmp)
+{错误使用 <a href="matlab:matlab.internal.language.introspective.errorDocCallback('reverse', 'D:\R2020b\toolbox\matlab\strfun\reverse.m', 42)" style="font-weight:bold">reverse</a> (<a href="matlab: opentoline('D:\R2020b\toolbox\matlab\strfun\reverse.m',42,0)">第 42 行</a>)
+第一个参数 必须为文本。
+} 
+flip(tmp)
+
+ans =
+
+    0.4133
+    0.4137
+    0.4148
+    0.4152
+    0.4153
+    0.4156
+    0.4157
+    0.4167
+    0.4187
+    0.4192
+    0.4195
+    0.4205
+    0.4242
+    0.4247
+    0.4262
+    0.4262
+    0.4290
+    0.4301
+    0.4339
+    0.4346
+    0.4412
+    0.4558
+    0.4635
+    0.4674
+    0.4692
+    0.4735
+    0.4754
+    0.4806
+    0.4818
+    0.4867
+    0.4877
+    0.4911
+    0.4933
+    0.5063
+    0.5120
+    0.5480
+    0.5687
+    0.5728
+    0.5739
+    0.5869
+    0.5972
+    0.6027
+    0.6206
+    0.6363
+    0.6495
+    0.6568
+    0.6765
+    2.0000
+    2.0000
+    2.0000
+
+clc
+clear
+close all
+%%导入数据
+path = 'ISO_k2N64';
+Apath = [path '/A.txt'];
+Bpath = [path '/M.txt'];
+load(Apath)
+{错误使用 <a href="matlab:matlab.internal.language.introspective.errorDocCallback('load')" style="font-weight:bold">load</a>
+在当前文件夹或 MATLAB 路径中未找到 'ISO_k2N64/A.txt'，但它位于:
+ F:\研究生阶段\研究僧\RESEARCH\课题\surfice PDE\特征值问题\codes
+
+<a href = "matlab:matlab.internal.language.commandline.executeCode('cd ''F:\研究生阶段\研究僧\RESEARCH\课题\surfice PDE\特征值问题\codes''')">更改 MATLAB 当前文件夹</a> 或 <a href = "matlab:matlab.internal.language.commandline.executeCode('addpath ''F:\研究生阶段\研究僧\RESEARCH\课题\surfice PDE\特征值问题\codes''')">将其文件夹添加到 MATLAB 路径</a>。
+} 
+find_eigs_large
+{操作在以下过程中被用户终止 <a href="matlab:matlab.internal.language.introspective.errorDocCallback('find_eigs_large', 'F:\研究生阶段\研究僧\RESEARCH\课题\surfice PDE\特征值问题\codes\find_eigs_large.m', 8)" style="font-weight:bold">find_eigs_large</a> (<a href="matlab: opentoline('F:\研究生阶段\研究僧\RESEARCH\课题\surfice PDE\特征值问题\codes\find_eigs_large.m',8,0)">第 8 行</a>)
+} 
+clc
+clear
+close all
+%%导入数据
+path = 'ISO_k2N64';
+Apath = [path '/A.txt'];
+Bpath = [path '/M.txt'];
+load(Apath)
+load(Bpath)
+if exist([path '/log.txt'],'file')==2
+    delete([path '/log.txt']);
+end
+diary([path '/log.txt']);

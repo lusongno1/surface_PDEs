@@ -1,0 +1,39 @@
+==============
+  ToDo-Liste
+==============
+
+* (Navier-)Stokes-Diskretisierung: Nutzen der neuen Randbedingungen
+  Dir, Dir0, Nat, Nat0. Hinweis: Code fuer Nat-BC ist bislang fehlerhaft.
+
+* Die Anzahl der Parameter nimmt langsam ueberhand. Statt ueberlangen
+  Kommandozeilenaufrufen bzw. Aendern der Parameter im Code sollten
+  wir auf das Einlesen der Parameter aus entsprechenden Dateien umsteigen.
+  Wie koennte das elegant geschehen?
+
+* Template-Parameter Coeff der Problemklassen Poisson, Stokes, NavStokes
+  entfernen. Der ehemalige Grund, aus Laufzeitgruenden auf virtuelle
+  Funktionsaufrufe oder Funktionszeiger zu verzichten, scheint unwesentlich,
+  da die Diskretisierung vergleichsweise billig ist.
+
+* einheitlicher Code fuer stat./instat. Probleme: Funktionen, die
+  Koeffizienten/Randbedingungen beschreiben sollten einheitlich den
+  Zeitparameter t enthalten. Dann wuerde viel doppelter Code gespart, und
+  umstaendliche Programmiertricks (s. P2EvalCL, StriptimeCL) koennten
+  entfallen.
+
+sg, 17. Dez. 03
+
+
+
+* Die Datei-Header sollten vereinheitlicht und mit sinnvollem Inhalt
+  gefuellt werden.
+
+* Vorkonditionierer sollten nicht kopiert werden. Die Loeser sollten
+  nur eine Referenz speichern. Kopierkonstruktoren entfallen oder
+  vereinfachen sich. Vorsicht mit Vorkonditionierern, die als
+  Temporary uebergeben werden. Was passiert mit den Init-Funktionen?
+
+* Konstruktion von Matrizen: Es macht Sinn, erst SparseMatBuilderCL zu
+  erzeugen und mit dem fertigen Builder die Matrix zu erzeugen.
+
+vr, 16. Mai 2003

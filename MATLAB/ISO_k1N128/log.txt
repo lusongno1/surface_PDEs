@@ -1,0 +1,62 @@
+diary on;
+%% 生成矩阵
+A = sparse(A(:,1),A(:,2),A(:,3));
+B = sparse(M(:,1),M(:,2),M(:,3));
+size = size(A,1);
+%B_epsilon = sparse(1:size,1:size,1e-5);
+%B = B+B_epsilon;
+%B = B+diag(ones(size(B,1),1)*1e-15);
+%A_full = full(A);
+%B_full = full(B);
+
+% %% 观察矩阵的数据分布，判断其是否对称正定，是否满秩
+% %spy(A)
+% % A - A.'
+%eigA = eigs(A,6,0);
+% 
+% 
+% 
+% rank(A_full)
+% 
+%isDefiniteA = ~sum(~(eigA >= 0))
+% % 
+% % %spy(B)
+% % B - B.'
+%eigB = eigs(B,6,0);
+% rank(B_full)
+%isDefiniteB = ~sum(~(eigB >= 0))
+%if ~isDefiniteB
+%    error('B is not definite!!!');
+%end
+%% 实际特征值
+k = 1:10;
+eig_true = k.*(k-1);
+%tmp = eigs(A,B,100,2)
+%% 求广义特征值问题
+%eig_cal = [];
+% for i=1:length(eig_true)
+%     i
+%     sigma = eig_true(i);
+%     eig_cal = [eig_cal;eigs(A,B,2*i+1,sigma)];
+% end
+eig_cal = eigs(A,B,150,0);
+%find eigenvalues with A and B by MATLAB function eig and collocate eigenvalues as result of eig_cluster
+%add stabilization term
+clc
+clear
+close all
+
+%% 
+%path = 'ISO_k1N32_Stb';
+%path = 'NISO_k2N32';
+path = 'ngsxfem_stb';
+Apath = [path '/A.txt'];
+Bpath = [path '/M.txt'];
+Spath = [path '/S.txt'];
+load(Apath)
+load(Bpath)
+load(Spath)
+if exist([path '/log.txt'],'file')==2
+    delete([path '/log.txt']);
+end
+diary([path '/log.txt']);

@@ -1,0 +1,29 @@
+
+size =
+
+    27
+
+
+rankA =
+
+    27
+
+
+isDefiniteA =
+
+  <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a>
+
+   1
+
+
+rankB =
+
+    27
+
+
+isDefiniteB =
+
+  <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a>
+
+   1
+
